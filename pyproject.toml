@@ -1,0 +1,37 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "semsearch"
+version = "0.1.0"
+description = "Semantic search over a real news corpus — pluggable embedders, exact cosine index, FastAPI, evaluated with recall@k / MRR"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "Kanishktyson" }]
+dependencies = [
+    "fastapi>=0.110",
+    "uvicorn>=0.29",
+    "numpy>=1.26",
+]
+
+[project.optional-dependencies]
+sbert = ["sentence-transformers>=3.0"]
+ui = ["streamlit>=1.36"]
+dev = ["pytest>=8.0", "httpx>=0.27", "ruff>=0.6", "coverage>=7.4"]
+
+[tool.setuptools.packages.find]
+include = ["semsearch*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "UP", "B"]
+ignore = ["E501"]

@@ -1,0 +1,71 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install ruff
+      - run: ruff check semsearch tests scripts ui
+
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.10", "3.11", "3.12"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Install (torch-free — CI runs the hashing embedder)
+        run: pip install -r requirements-dev.txt
+      - name: Test suite + coverage gate
+        run: |
+          coverage run --source=semsearch -m pytest tests
+          coverage report --fail-under=88
+
+  eval:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -r requirements-dev.txt
+      - name: Eval set reproduces committed metrics (hashing embedder is deterministic)
+        run: |
+          python scripts/run_eval.py --embedder hashing --out /tmp/metrics.json
+          python - <<'PY'
+          import json
+          committed = json.load(open("eval/metrics.json"))
+          fresh = json.load(open("/tmp/metrics.json"))
+          for key in ("recall_at_1", "recall_at_5", "mrr_at_10"):
+              drift = abs(committed[key] - fresh[key])
+              assert drift <= 0.02, f"{key} drifted by {drift:.4f}"
+          print("eval metrics reproduce:", {k: fresh[k] for k in ("recall_at_1", "recall_at_5", "mrr_at_10")})
+          PY
+
+  docker:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build torch-free image
+        run: docker build -t semsearch:ci .
+      - name: Smoke test /health inside the image
+        run: |
+          docker run -d --name smoke -p 8000:8000 semsearch:ci
+          for i in $(seq 1 20); do
+            if curl -sf http://127.0.0.1:8000/health; then echo "health OK"; exit 0; fi
+            sleep 1
+          done
+          echo "container did not become healthy"; exit 1

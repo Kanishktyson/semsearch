@@ -1,0 +1,3 @@
+# Core runtime deps (torch-free — the default hashing embedder is stdlib+numpy).
+# Real semantic embeddings: pip install -e '.[sbert]'
+-e .

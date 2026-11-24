@@ -1,0 +1,291 @@
+{
+  "n_queries": 20,
+  "n_docs": 400,
+  "embedder": "hashing-512",
+  "recall_at_1": 0.7,
+  "recall_at_5": 0.4894,
+  "mrr_at_10": 0.7325,
+  "per_query": [
+    {
+      "query": "earthquake tsunami survivors relief aid",
+      "n_relevant": 2,
+      "hits_at_1": 1,
+      "hits_at_5": 1,
+      "first_relevant_rank": 1,
+      "retrieved": [
+        "doc-0078",
+        "doc-0188",
+        "doc-0283",
+        "doc-0327",
+        "doc-0356"
+      ]
+    },
+    {
+      "query": "united nations peacekeeping troops deployment",
+      "n_relevant": 2,
+      "hits_at_1": 0,
+      "hits_at_5": 0,
+      "first_relevant_rank": null,
+      "retrieved": [
+        "doc-0125",
+        "doc-0142",
+        "doc-0075",
+        "doc-0114",
+        "doc-0348"
+      ]
+    },
+    {
+      "query": "gaza palestinian conflict fighting",
+      "n_relevant": 3,
+      "hits_at_1": 1,
+      "hits_at_5": 2,
+      "first_relevant_rank": 1,
+      "retrieved": [
+        "doc-0018",
+        "doc-0019",
+        "doc-0211",
+        "doc-0124",
+        "doc-0363"
+      ]
+    },
+    {
+      "query": "nuclear program iran north korea",
+      "n_relevant": 3,
+      "hits_at_1": 1,
+      "hits_at_5": 1,
+      "first_relevant_rank": 1,
+      "retrieved": [
+        "doc-0006",
+        "doc-0004",
+        "doc-0337",
+        "doc-0007",
+        "doc-0224"
+      ]
+    },
+    {
+      "query": "afghanistan presidential election results",
+      "n_relevant": 3,
+      "hits_at_1": 1,
+      "hits_at_5": 3,
+      "first_relevant_rank": 1,
+      "retrieved": [
+        "doc-0034",
+        "doc-0042",
+        "doc-0016",
+        "doc-0053",
+        "doc-0359"
+      ]
+    },
+    {
+      "query": "tennis open tournament upset",
+      "n_relevant": 3,
+      "hits_at_1": 0,
+      "hits_at_5": 1,
+      "first_relevant_rank": 4,
+      "retrieved": [
+        "doc-0173",
+        "doc-0234",
+        "doc-0265",
+        "doc-0145",
+        "doc-0352"
+      ]
+    },
+    {
+      "query": "olympic gold medal athens",
+      "n_relevant": 1,
+      "hits_at_1": 0,
+      "hits_at_5": 0,
+      "first_relevant_rank": 10,
+      "retrieved": [
+        "doc-0042",
+        "doc-0108",
+        "doc-0182",
+        "doc-0109",
+        "doc-0067"
+      ]
+    },
+    {
+      "query": "zimbabwe cricket council status",
+      "n_relevant": 1,
+      "hits_at_1": 1,
+      "hits_at_5": 1,
+      "first_relevant_rank": 1,
+      "retrieved": [
+        "doc-0152",
+        "doc-0349",
+        "doc-0038",
+        "doc-0313",
+        "doc-0089"
+      ]
+    },
+    {
+      "query": "oil price surge demand",
+      "n_relevant": 2,
+      "hits_at_1": 1,
+      "hits_at_5": 1,
+      "first_relevant_rank": 1,
+      "retrieved": [
+        "doc-0269",
+        "doc-0240",
+        "doc-0201",
+        "doc-0149",
+        "doc-0293"
+      ]
+    },
+    {
+      "query": "quarterly earnings profit report",
+      "n_relevant": 5,
+      "hits_at_1": 0,
+      "hits_at_5": 1,
+      "first_relevant_rank": 5,
+      "retrieved": [
+        "doc-0255",
+        "doc-0244",
+        "doc-0213",
+        "doc-0180",
+        "doc-0253"
+      ]
+    },
+    {
+      "query": "airline bankruptcy protection",
+      "n_relevant": 1,
+      "hits_at_1": 0,
+      "hits_at_5": 0,
+      "first_relevant_rank": null,
+      "retrieved": [
+        "doc-0158",
+        "doc-0335",
+        "doc-0079",
+        "doc-0312",
+        "doc-0298"
+      ]
+    },
+    {
+      "query": "stock market investors shares",
+      "n_relevant": 5,
+      "hits_at_1": 1,
+      "hits_at_5": 2,
+      "first_relevant_rank": 1,
+      "retrieved": [
+        "doc-0206",
+        "doc-0324",
+        "doc-0278",
+        "doc-0352",
+        "doc-0203"
+      ]
+    },
+    {
+      "query": "mobile phone wireless service",
+      "n_relevant": 4,
+      "hits_at_1": 1,
+      "hits_at_5": 1,
+      "first_relevant_rank": 1,
+      "retrieved": [
+        "doc-0388",
+        "doc-0394",
+        "doc-0316",
+        "doc-0017",
+        "doc-0097"
+      ]
+    },
+    {
+      "query": "computer virus security threat",
+      "n_relevant": 2,
+      "hits_at_1": 0,
+      "hits_at_5": 0,
+      "first_relevant_rank": 10,
+      "retrieved": [
+        "doc-0094",
+        "doc-0113",
+        "doc-0193",
+        "doc-0358",
+        "doc-0288"
+      ]
+    },
+    {
+      "query": "file sharing lawsuits music industry",
+      "n_relevant": 2,
+      "hits_at_1": 1,
+      "hits_at_5": 1,
+      "first_relevant_rank": 1,
+      "retrieved": [
+        "doc-0341",
+        "doc-0029",
+        "doc-0392",
+        "doc-0267",
+        "doc-0039"
+      ]
+    },
+    {
+      "query": "voip internet phone calls",
+      "n_relevant": 1,
+      "hits_at_1": 1,
+      "hits_at_5": 1,
+      "first_relevant_rank": 1,
+      "retrieved": [
+        "doc-0392",
+        "doc-0290",
+        "doc-0394",
+        "doc-0164",
+        "doc-0055"
+      ]
+    },
+    {
+      "query": "space station crew mission",
+      "n_relevant": 2,
+      "hits_at_1": 1,
+      "hits_at_5": 2,
+      "first_relevant_rank": 1,
+      "retrieved": [
+        "doc-0355",
+        "doc-0326",
+        "doc-0334",
+        "doc-0183",
+        "doc-0336"
+      ]
+    },
+    {
+      "query": "commercial space tourism flights",
+      "n_relevant": 3,
+      "hits_at_1": 1,
+      "hits_at_5": 3,
+      "first_relevant_rank": 1,
+      "retrieved": [
+        "doc-0334",
+        "doc-0336",
+        "doc-0327",
+        "doc-0355",
+        "doc-0325"
+      ]
+    },
+    {
+      "query": "supermarket grocery retailer earnings",
+      "n_relevant": 1,
+      "hits_at_1": 1,
+      "hits_at_5": 1,
+      "first_relevant_rank": 1,
+      "retrieved": [
+        "doc-0226",
+        "doc-0204",
+        "doc-0367",
+        "doc-0171",
+        "doc-0237"
+      ]
+    },
+    {
+      "query": "soccer racism spain match",
+      "n_relevant": 1,
+      "hits_at_1": 1,
+      "hits_at_5": 1,
+      "first_relevant_rank": 1,
+      "retrieved": [
+        "doc-0184",
+        "doc-0355",
+        "doc-0156",
+        "doc-0198",
+        "doc-0028"
+      ]
+    }
+  ],
+  "generated": "2026-11-24"
+}
